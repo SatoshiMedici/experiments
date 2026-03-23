@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "remotion studio",
-    "build": "remotion render MultyrPresentation out/presentation.mp4",
+    "dev": "vite",
+    "build": "vite build",
     "render": "remotion render MultyrPresentation out/presentation.mp4"
   },
   "keywords": [],
@@ -21,6 +22,8 @@
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^5.9.3"
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.1"
   }
 }
