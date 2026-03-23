@@ -1,0 +1,25 @@
+export const theme = {
+  colors: {
+    bg: "#0a0a0f",
+    bgCard: "rgba(255,255,255,0.04)",
+    bgCardHover: "rgba(255,255,255,0.08)",
+    primary: "#6c5ce7",
+    primaryLight: "#a29bfe",
+    accent: "#00cec9",
+    accentGreen: "#00b894",
+    accentRed: "#ff6b6b",
+    accentOrange: "#fdcb6e",
+    text: "#ffffff",
+    textSecondary: "rgba(255,255,255,0.6)",
+    textMuted: "rgba(255,255,255,0.4)",
+    border: "rgba(255,255,255,0.08)",
+    gradient1: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
+    gradient2: "linear-gradient(135deg, #00cec9, #00b894)",
+    gradient3: "linear-gradient(135deg, #6c5ce7, #00cec9)",
+  },
+  fonts: {
+    heading: "'Inter', -apple-system, sans-serif",
+    body: "'Inter', -apple-system, sans-serif",
+    mono: "'JetBrains Mono', monospace",
+  },
+};
