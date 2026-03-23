@@ -1,54 +1,25 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
 import { SlideLayout, AnimatedElement } from "../components/SlideLayout";
 import { theme } from "../theme";
 
-const SignalItem: React.FC<{
-  text: string;
-  isGood: boolean;
-  delay: number;
-}> = ({ text, isGood, delay }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const progress = spring({
-    frame: frame - delay,
-    fps,
-    config: { damping: 20 },
-  });
-
-  return (
-    <div
+const SignalItem: React.FC<{ text: string; isGood: boolean }> = ({ text, isGood }) => (
+  <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+    <span
       style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: "12px",
-        opacity: interpolate(progress, [0, 1], [0, 1]),
-        transform: `translateX(${interpolate(progress, [0, 1], [isGood ? -15 : 15, 0])}px)`,
+        fontSize: "16px",
+        color: isGood ? theme.colors.accentGreen : theme.colors.accentRed,
+        fontWeight: 700,
+        flexShrink: 0,
+        marginTop: "1px",
       }}
     >
-      <span
-        style={{
-          fontSize: "18px",
-          color: isGood ? theme.colors.accentGreen : theme.colors.accentRed,
-          fontWeight: 700,
-          flexShrink: 0,
-          marginTop: "1px",
-        }}
-      >
-        {isGood ? "\u2713" : "\u2717"}
-      </span>
-      <span
-        style={{
-          fontSize: "17px",
-          color: theme.colors.textSecondary,
-          lineHeight: 1.5,
-        }}
-      >
-        {text}
-      </span>
-    </div>
-  );
-};
+      {isGood ? "\u2713" : "\u2717"}
+    </span>
+    <span style={{ fontSize: "15px", color: theme.colors.textSecondary, lineHeight: 1.5 }}>
+      {text}
+    </span>
+  </div>
+);
 
 export const Slide6Quality: React.FC = () => {
   const goodSignals = [
@@ -76,185 +47,132 @@ export const Slide6Quality: React.FC = () => {
 
   return (
     <SlideLayout slideNumber={6} totalSlides={7}>
-      <AnimatedElement delay={0}>
-        <h2
-          style={{
-            fontSize: "48px",
-            fontWeight: 700,
-            margin: 0,
-            background: theme.colors.gradient3,
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Quality vs Quantity
-        </h2>
-      </AnimatedElement>
-      <AnimatedElement delay={5}>
-        <p
-          style={{
-            fontSize: "20px",
-            color: theme.colors.textMuted,
-            margin: "8px 0 36px",
-            fontStyle: "italic",
-          }}
-        >
-          How to filter airdrop hunters from real allocators
-        </p>
-      </AnimatedElement>
+      <h2
+        style={{
+          fontSize: "42px",
+          fontWeight: 700,
+          margin: 0,
+          background: theme.colors.gradient3,
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        Quality vs Quantity
+      </h2>
+      <p
+        style={{
+          fontSize: "18px",
+          color: theme.colors.textMuted,
+          margin: "8px 0 32px",
+          fontStyle: "italic",
+        }}
+      >
+        How to filter airdrop hunters from real allocators
+      </p>
 
-      <div style={{ display: "flex", gap: "30px", flex: 1 }}>
-        {/* Good signals */}
+      <div style={{ display: "flex", gap: "24px", flex: 1 }}>
         <div style={{ flex: 1 }}>
-          <AnimatedElement delay={8}>
-            <div
+          <div
+            style={{
+              background: "rgba(5,150,105,0.04)",
+              border: "1px solid rgba(5,150,105,0.15)",
+              borderRadius: "16px",
+              padding: "28px",
+            }}
+          >
+            <h3
               style={{
-                background: "rgba(0,184,148,0.06)",
-                border: "1px solid rgba(0,184,148,0.2)",
-                borderRadius: "16px",
-                padding: "28px",
+                fontSize: "18px",
+                fontWeight: 600,
+                color: theme.colors.accentGreen,
+                margin: "0 0 20px",
               }}
             >
-              <h3
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  color: theme.colors.accentGreen,
-                  margin: "0 0 20px",
-                }}
-              >
-                High-Value Signals
-              </h3>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "14px",
-                }}
-              >
-                {goodSignals.map((s, i) => (
-                  <SignalItem
-                    key={i}
-                    text={s}
-                    isGood={true}
-                    delay={12 + i * 5}
-                  />
-                ))}
-              </div>
+              High-Value Signals
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              {goodSignals.map((s, i) => (
+                <SignalItem key={i} text={s} isGood={true} />
+              ))}
             </div>
-          </AnimatedElement>
+          </div>
         </div>
 
-        {/* Bad signals */}
         <div style={{ flex: 1 }}>
-          <AnimatedElement delay={12}>
-            <div
+          <div
+            style={{
+              background: "rgba(220,38,38,0.04)",
+              border: "1px solid rgba(220,38,38,0.15)",
+              borderRadius: "16px",
+              padding: "28px",
+            }}
+          >
+            <h3
               style={{
-                background: "rgba(255,107,107,0.06)",
-                border: "1px solid rgba(255,107,107,0.2)",
-                borderRadius: "16px",
-                padding: "28px",
+                fontSize: "18px",
+                fontWeight: 600,
+                color: theme.colors.accentRed,
+                margin: "0 0 20px",
               }}
             >
-              <h3
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  color: theme.colors.accentRed,
-                  margin: "0 0 20px",
-                }}
-              >
-                Low-Value Signals
-              </h3>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "14px",
-                }}
-              >
-                {badSignals.map((s, i) => (
-                  <SignalItem
-                    key={i}
-                    text={s}
-                    isGood={false}
-                    delay={16 + i * 5}
-                  />
-                ))}
-              </div>
+              Low-Value Signals
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              {badSignals.map((s, i) => (
+                <SignalItem key={i} text={s} isGood={false} />
+              ))}
             </div>
-          </AnimatedElement>
+          </div>
         </div>
 
-        {/* Filtering methods */}
         <div style={{ flex: 0.8 }}>
-          <AnimatedElement delay={35}>
-            <div
+          <div
+            style={{
+              background: "white",
+              border: `1px solid ${theme.colors.border}`,
+              borderRadius: "16px",
+              padding: "28px",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+            }}
+          >
+            <h3
               style={{
-                background: theme.colors.bgCard,
-                border: `1px solid ${theme.colors.border}`,
-                borderRadius: "16px",
-                padding: "28px",
+                fontSize: "18px",
+                fontWeight: 600,
+                color: theme.colors.primary,
+                margin: "0 0 20px",
               }}
             >
-              <h3
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  color: theme.colors.primaryLight,
-                  margin: "0 0 20px",
-                }}
-              >
-                Filtering Methods
-              </h3>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "14px",
-                }}
-              >
-                {filterMethods.map((m, i) => (
+              Filtering Methods
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              {filterMethods.map((m, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div
-                    key={i}
                     style={{
+                      width: "24px",
+                      height: "24px",
+                      borderRadius: "50%",
+                      background: `${theme.colors.primary}15`,
                       display: "flex",
                       alignItems: "center",
-                      gap: "10px",
+                      justifyContent: "center",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      color: theme.colors.primary,
+                      flexShrink: 0,
                     }}
                   >
-                    <div
-                      style={{
-                        width: "24px",
-                        height: "24px",
-                        borderRadius: "50%",
-                        background: `${theme.colors.primary}33`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "13px",
-                        fontWeight: 600,
-                        color: theme.colors.primaryLight,
-                        flexShrink: 0,
-                      }}
-                    >
-                      {i + 1}
-                    </div>
-                    <span
-                      style={{
-                        fontSize: "15px",
-                        color: theme.colors.textSecondary,
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      {m}
-                    </span>
+                    {i + 1}
                   </div>
-                ))}
-              </div>
+                  <span style={{ fontSize: "14px", color: theme.colors.textSecondary, lineHeight: 1.4 }}>
+                    {m}
+                  </span>
+                </div>
+              ))}
             </div>
-          </AnimatedElement>
+          </div>
         </div>
       </div>
     </SlideLayout>
