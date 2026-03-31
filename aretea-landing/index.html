@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aretea AI - Intelligent Infrastructure for Modern Applications</title>
+  <meta name="description" content="Aretea AI builds reliable, intelligent infrastructure services. Simple APIs, powerful results." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">&#x25B2;</span>
+        <span class="logo-text">aretea<span class="logo-accent">.ai</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#docs">Documentation</a></li>
+        <li><a href="#quickstart">Quick Start</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="https://github.com/aretea-ai" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">Open Source &middot; TypeScript &middot; Production Ready</div>
+      <h1>Intelligent Infrastructure<br /><span class="text-gradient">for Modern Applications</span></h1>
+      <p class="hero-subtitle">
+        Aretea AI builds simple, reliable microservices that power your applications.
+        Start with a single endpoint. Scale to millions of requests.
+      </p>
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Get Started</a>
+        <a href="#docs" class="btn btn-secondary">Read the Docs</a>
+      </div>
+      <div class="hero-code">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-title">Terminal</span>
+        </div>
+        <pre><code><span class="code-comment"># Health check in one line</span>
+<span class="code-prompt">$</span> curl https://api.aretea.ai/ping
+<span class="code-response">pong</span></code></pre>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-value">&lt;1ms</span>
+        <span class="stat-label">Response Time</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">99.99%</span>
+        <span class="stat-label">Uptime SLA</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">TypeScript</span>
+        <span class="stat-label">First-Class Support</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Open Source</span>
+        <span class="stat-label">MIT Licensed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Aretea AI?</h2>
+        <p>We build infrastructure that gets out of your way and lets you focus on what matters.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#9889;</div>
+          <h3>Blazing Fast</h3>
+          <p>Sub-millisecond response times. Our services are built on Node.js with zero unnecessary dependencies for maximum throughput.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128274;</div>
+          <h3>Secure by Default</h3>
+          <p>Every endpoint follows security best practices. Strict TypeScript, input validation, and minimal attack surface built in.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128230;</div>
+          <h3>Zero Dependencies</h3>
+          <p>Built on Node.js native modules. No bloated dependency trees, no supply chain risks, no unexpected breaking changes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128736;</div>
+          <h3>Developer First</h3>
+          <p>TypeScript-native with complete type definitions. Intuitive APIs that work the way you expect them to.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127760;</div>
+          <h3>Edge Ready</h3>
+          <p>Deploy anywhere - cloud, edge, or on-premises. Our lightweight architecture adapts to your infrastructure.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128200;</div>
+          <h3>Observable</h3>
+          <p>Built-in health checks and monitoring endpoints. Know the state of your services at all times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section class="section section-dark" id="docs">
+    <div class="container">
+      <div class="section-header">
+        <h2>Documentation</h2>
+        <p>Everything you need to integrate Aretea AI services into your stack.</p>
+      </div>
+
+      <!-- Ping Service Docs -->
+      <div class="docs-block">
+        <div class="docs-sidebar">
+          <h3>Ping Service</h3>
+          <p>A lightweight health-check microservice for monitoring uptime and connectivity across your infrastructure.</p>
+          <ul class="docs-nav">
+            <li><a href="#doc-overview" class="active" data-doc="overview">Overview</a></li>
+            <li><a href="#doc-api" data-doc="api">API Reference</a></li>
+            <li><a href="#doc-deploy" data-doc="deploy">Deployment</a></li>
+            <li><a href="#doc-config" data-doc="config">Configuration</a></li>
+            <li><a href="#doc-source" data-doc="source">Source Code</a></li>
+          </ul>
+        </div>
+        <div class="docs-content">
+          <!-- Overview -->
+          <div class="doc-panel active" id="doc-overview" data-doc="overview">
+            <h4>Overview</h4>
+            <p>The <strong>Ping</strong> service is a minimal, zero-dependency HTTP server built with Node.js native modules. It provides a single <code>/ping</code> endpoint that returns <code>pong</code> - perfect for:</p>
+            <ul>
+              <li>Health checks in container orchestration (Kubernetes, Docker Swarm)</li>
+              <li>Load balancer health probes (AWS ALB, Nginx, HAProxy)</li>
+              <li>Uptime monitoring (Datadog, Pingdom, UptimeRobot)</li>
+              <li>Service mesh connectivity verification</li>
+              <li>CI/CD pipeline smoke tests</li>
+            </ul>
+            <div class="doc-info">
+              <strong>Tech Stack:</strong> TypeScript, Node.js (native http module), tsx runtime
+            </div>
+          </div>
+
+          <!-- API Reference -->
+          <div class="doc-panel" id="doc-api" data-doc="api">
+            <h4>API Reference</h4>
+            <div class="endpoint">
+              <div class="endpoint-header">
+                <span class="method get">GET</span>
+                <code>/ping</code>
+              </div>
+              <p>Returns a plain text response confirming the service is alive.</p>
+              <h5>Response</h5>
+              <div class="code-block">
+                <pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain
+
+pong</code></pre>
+              </div>
+              <h5>Example</h5>
+              <div class="code-block">
+                <pre><code><span class="code-prompt">$</span> curl -i http://localhost:3000/ping
+
+HTTP/1.1 200 OK
+Content-Type: text/plain
+
+pong</code></pre>
+              </div>
+            </div>
+
+            <div class="endpoint">
+              <div class="endpoint-header">
+                <span class="method any">ANY</span>
+                <code>/*</code>
+              </div>
+              <p>All other routes return a 404 response.</p>
+              <h5>Response</h5>
+              <div class="code-block">
+                <pre><code>HTTP/1.1 404 Not Found
+Content-Type: text/plain
+
+Not Found</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deployment -->
+          <div class="doc-panel" id="doc-deploy" data-doc="deploy">
+            <h4>Deployment</h4>
+            <h5>Docker</h5>
+            <div class="code-block">
+              <pre><code><span class="code-comment"># Dockerfile</span>
+FROM node:22-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --production
+COPY . .
+EXPOSE 3000
+CMD ["npx", "tsx", "src/index.ts"]</code></pre>
+            </div>
+            <h5>Docker Compose</h5>
+            <div class="code-block">
+              <pre><code><span class="code-comment"># docker-compose.yml</span>
+services:
+  ping:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3</code></pre>
+            </div>
+            <h5>Kubernetes</h5>
+            <div class="code-block">
+              <pre><code><span class="code-comment"># k8s deployment snippet</span>
+livenessProbe:
+  httpGet:
+    path: /ping
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /ping
+    port: 3000
+  initialDelaySeconds: 3
+  periodSeconds: 5</code></pre>
+            </div>
+          </div>
+
+          <!-- Configuration -->
+          <div class="doc-panel" id="doc-config" data-doc="config">
+            <h4>Configuration</h4>
+            <table class="config-table">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>PORT</code></td>
+                  <td><code>3000</code></td>
+                  <td>The port the HTTP server listens on</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Example</h5>
+            <div class="code-block">
+              <pre><code><span class="code-prompt">$</span> PORT=8080 npx tsx src/index.ts
+Server listening on port 8080</code></pre>
+            </div>
+          </div>
+
+          <!-- Source Code -->
+          <div class="doc-panel" id="doc-source" data-doc="source">
+            <h4>Source Code</h4>
+            <p>The entire service is a single TypeScript file - simple, auditable, and easy to understand.</p>
+            <div class="code-block">
+              <pre><code><span class="code-keyword">import</span> http <span class="code-keyword">from</span> <span class="code-string">"node:http"</span>;
+
+<span class="code-keyword">const</span> port = process.env.PORT ?? <span class="code-number">3000</span>;
+
+<span class="code-keyword">const</span> server = http.<span class="code-func">createServer</span>((req, res) => {
+  <span class="code-keyword">if</span> (req.method === <span class="code-string">"GET"</span> && req.url === <span class="code-string">"/ping"</span>) {
+    res.<span class="code-func">writeHead</span>(<span class="code-number">200</span>, { <span class="code-string">"Content-Type"</span>: <span class="code-string">"text/plain"</span> });
+    res.<span class="code-func">end</span>(<span class="code-string">"pong"</span>);
+  } <span class="code-keyword">else</span> {
+    res.<span class="code-func">writeHead</span>(<span class="code-number">404</span>, { <span class="code-string">"Content-Type"</span>: <span class="code-string">"text/plain"</span> });
+    res.<span class="code-func">end</span>(<span class="code-string">"Not Found"</span>);
+  }
+});
+
+server.<span class="code-func">listen</span>(port, () => {
+  console.<span class="code-func">log</span>(<span class="code-string">`Server listening on port ${port}`</span>);
+});</code></pre>
+            </div>
+            <a href="https://github.com/aretea-ai/ping" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:1rem;">View on GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Section -->
+  <section class="section" id="quickstart">
+    <div class="container">
+      <div class="section-header">
+        <h2>Quick Start</h2>
+        <p>Get up and running in under a minute.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Clone</h3>
+          <div class="code-block">
+            <pre><code><span class="code-prompt">$</span> git clone https://github.com/aretea-ai/ping.git
+<span class="code-prompt">$</span> cd ping</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Install</h3>
+          <div class="code-block">
+            <pre><code><span class="code-prompt">$</span> npm install</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Run</h3>
+          <div class="code-block">
+            <pre><code><span class="code-prompt">$</span> npm start
+Server listening on port 3000</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Test</h3>
+          <div class="code-block">
+            <pre><code><span class="code-prompt">$</span> curl http://localhost:3000/ping
+pong</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section section-dark" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pricing</h2>
+        <p>Start free. Scale when you're ready.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-tier">Community</div>
+          <div class="pricing-price">Free</div>
+          <div class="pricing-period">forever</div>
+          <ul class="pricing-features">
+            <li>All open source services</li>
+            <li>Self-hosted deployment</li>
+            <li>Community support</li>
+            <li>GitHub issues</li>
+          </ul>
+          <a href="https://github.com/aretea-ai" target="_blank" rel="noopener" class="btn btn-secondary">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">$29<span>/mo</span></div>
+          <div class="pricing-period">per service</div>
+          <ul class="pricing-features">
+            <li>Managed cloud hosting</li>
+            <li>99.99% uptime SLA</li>
+            <li>Priority support</li>
+            <li>Custom domains</li>
+            <li>Auto-scaling</li>
+          </ul>
+          <a href="#" class="btn btn-primary" onclick="openChat(); return false;">Contact Sales</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price">Custom</div>
+          <div class="pricing-period">tailored to you</div>
+          <ul class="pricing-features">
+            <li>Dedicated infrastructure</li>
+            <li>Custom SLA</li>
+            <li>24/7 dedicated support</li>
+            <li>On-premises option</li>
+            <li>SSO & compliance</li>
+          </ul>
+          <a href="#" class="btn btn-secondary" onclick="openChat(); return false;">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">&#x25B2;</span>
+            <span class="logo-text">aretea<span class="logo-accent">.ai</span></span>
+          </a>
+          <p>Building intelligent infrastructure for the modern web.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#docs">Documentation</a></li>
+            <li><a href="#quickstart">Quick Start</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/aretea-ai" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#docs">API Reference</a></li>
+            <li><a href="#" onclick="openChat(); return false;">Support</a></li>
+            <li><a href="#">Status Page</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aretea AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Support Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open support chat">
+      <span class="chat-icon" id="chatIcon">&#128172;</span>
+    </button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">AI</div>
+          <div>
+            <div class="chat-header-title">Aretea Support</div>
+            <div class="chat-header-status"><span class="status-dot"></span> Online</div>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages populated by JS -->
+      </div>
+      <div class="chat-escalation" id="chatEscalation" style="display:none;">
+        <p>Let me connect you with a human agent. Please provide your details:</p>
+        <form id="escalationForm">
+          <input type="text" id="escName" placeholder="Your name" required />
+          <input type="email" id="escEmail" placeholder="Your email" required />
+          <textarea id="escSummary" placeholder="Brief summary of your issue" rows="2" required></textarea>
+          <button type="submit" class="btn btn-primary btn-sm">Connect to Human Agent</button>
+        </form>
+      </div>
+      <div class="chat-input-area" id="chatInputArea">
+        <input type="text" id="chatInput" placeholder="Type your question..." autocomplete="off" />
+        <button id="chatSend" aria-label="Send message">&#10148;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
